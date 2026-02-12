@@ -1,0 +1,382 @@
+/* ===== BASE PAGE ===== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* This kills the horizontal scroll bar */
+  margin: 0;
+  padding: 0;
+}
+
+body.main-page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Indie Flower', cursive;
+  background: #f9f6ee;
+  background-image: linear-gradient(#ede5d2 1px, transparent 1px);
+  background-size: 100% 40px;
+}
+
+
+/* --------------------------------HEADER---------------------------------------------- */
+.header {
+    position: relative;
+    padding: 40px 20px 60px;
+    padding-bottom: 100px;
+    background-color: #fefcf5 ;
+    background-image: radial-gradient(#d8cfc291 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+}
+
+.countdown-font {
+  font-family: 'Bungee', cursive;
+  font-size: 4.5rem;
+  color: #948576;
+}
+
+.handwritten {
+  color: #564d44;
+}
+
+.header h2{
+    font-size: 3.5rem;
+    transform: translateY(-20%);
+}
+.subtext {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* LINE IN THE MIDDLE */
+/* .scroll-path {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 40px 120px;
+} */
+
+.scroll-path {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 40px 40px 40px;
+}
+
+.center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0.2%;
+  height: 100%;
+  border-radius: 5px;
+  background: #f0b9a4;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* --------------------------------STICKER LOCKED---------------------------------------------- */
+
+.sticker {
+    text-align: center; 
+    position: relative;
+    width: 40%;
+    z-index: 1;
+    padding: 0px;
+    text-decoration: none;
+    color: #4b4b4b;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+/* =========================================================================================== */
+
+.sticker.locked {
+    pointer-events: none; 
+    cursor: not-allowed;
+    position: relative;
+}
+
+.sticker.locked img, 
+.sticker.locked .numday {
+    filter: blur(4px) sepia(30%); 
+    opacity: 0.6;
+}
+
+.bday-section.locked img{
+    filter: blur(50px) grayscale(50%); 
+    opacity: 0.6;
+}
+
+.bday-section.locked h1, .bday-section.locked p {
+    filter: blur(15px) grayscale(50%); 
+    opacity: 0.6;
+}
+
+.sticker.locked::after {
+    content: "";
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    width: 50%; 
+    height: 50%;
+    background-image: url('/images/tape-lock.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+}
+
+.sticker.vday.locked::after{
+    height: 40%;
+    width: 40%;
+}
+
+.sticker.vday.locked::before{
+    top: 43%;
+    font-size: 1.5rem;
+}
+
+.sticker.locked::before {
+    content: "🔒 Opens "var(--days-left);
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%) translateX(3%) translateY(3%) rotate(2deg);
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 900;
+    color: #948576;
+    font-size: 1.3rem;
+    z-index: 11;
+    text-shadow: 1px 1px 3px #c5afa0;
+}
+
+
+.sticker:not(.locked)::before {
+    content: "✨ Click to open! ✨";
+    color: #8b735b; 
+    position: absolute;
+    bottom: 50%;   /* adjust this */
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3rem;
+    z-index: 11;
+    background-color: rgba(247, 234, 220, 0.592);
+    padding: 6px 10px;
+    border-radius: 9px;
+}
+
+.sticker.day6.locked::after {
+    transform: translate(-50%, -65%); 
+}
+
+.sticker.day6.locked::before {
+    transform: translate(-50%, -120%) rotate(2deg);
+}
+
+/* --------------------------------STICKER ADJUSTMENTS---------------------------------------------- */
+
+.sticker img{
+    filter: drop-shadow(4px 0px 2px rgba(77, 42, 23, 0.252));
+}
+
+.sticker span{
+    filter: drop-shadow(2px 0px 2px rgba(77, 42, 23, 0.252));
+}
+
+/* Make sure images (like the record) behave */
+.sticker img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.left {
+  justify-self: start;
+  margin-left: 5%; /* Space from the left edge */
+  transform: rotate(-3deg);
+}
+
+.right {
+  justify-self: end;
+  margin-right: 5%; /* Space from the right edge */
+  transform: rotate(3deg);
+}
+
+.bday.center {
+  justify-self: center;
+  width: 220px; /* Make the birthday one a bit bigger */
+  transform: rotate(0deg);
+}
+/* .day1 { margin-top: 0; }
+/* .day2 { margin-top: 10px; } */
+.vday { 
+    margin: 30px 0;
+}
+.day3 {
+    transform: rotate(-1deg);
+}
+
+.day3 span{
+    padding-top: 5%;
+}
+
+.jar{
+    transform: translateX(-1%);
+}
+
+.day4 span{
+    padding-top: 3%;
+}
+.day5 span{
+    padding-top: 6.5%;
+}
+/* .day5 { margin-top: 30px; }
+.day6 { margin-top: 90px; }  */
+.center {
+    width: 100%;
+    /* padding: 10% 50%; */
+    margin-top: 50px;
+    justify-self: center;
+    margin-bottom: 0;
+}
+.numday{
+    font-size: x-large;
+    transform: translateY(-40%);
+}
+
+.decor {
+    position: absolute;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.d1 {
+    top: 10%;
+    left: 10%;
+    transform: rotate(-10deg);
+}
+  
+.d2 {
+    top: 20%;
+    right: 10%;
+    transform: rotate(15deg);
+}
+  
+.d3 {
+    top: 280%;
+    left: 10%;
+    transform: rotate(-20deg);
+}
+
+.d4{
+    top:220%;
+    right: 13%;
+    transform: rotate(-5deg);
+}
+
+.d5{
+    top: 115%;
+    left: 10%;
+}
+
+.d6{
+    top: 328%;
+    right: 10%;
+    transform: rotate(20deg);
+}
+
+.d7{
+    top: 380%;
+    left: 15%;
+    transform: rotate(-20deg);
+}
+  
+.d8{
+    top: 70%;
+    right: 20%;
+    transform: rotate(10deg);
+}
+
+.d9{
+    top: 380%;
+    left: 16%;
+    transform: rotate(-10deg);
+}
+
+.bday-section {
+    position: relative;
+
+    width: 100%;
+    transform: translateY(-10%);
+
+    padding: 120px 20px;
+    text-align: center;
+
+    background: #fefcf5;
+    background-image: radial-gradient(#f1c3d391 1.1px, transparent 1px);
+    background-size: 18px 18px;
+}
+
+.bday-title {
+    color:#563640;
+    font-family: 'Bungee', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.bday-text {
+    color:#563640;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3rem;
+}
+
+.bday-section.sticker.locked::after {
+    display: none;
+}
+
+.bday-section.sticker.locked::before{
+    top: 50%;
+    background: rgba(255, 255, 255, 0.656);
+    padding: 7px 12px;
+    border-radius: 10px;
+}
+
+/* Floating stickers */
+.bday-sticker {
+    position: absolute;
+    width: 100px;
+    pointer-events: none;
+}
+
+.cake {
+    top: 24%;
+    left: 12%;
+    width: 13%;
+    transform: rotate(-8deg);
+}
+
+.balloon {
+    bottom: 5%;
+    right: 17%;
+    width: 7%;
+    transform: rotate(6deg);
+}
+/* 
+.berry {
+    top: 60px;
+    right: 20%;
+    transform: rotate(-12deg);
+} */
