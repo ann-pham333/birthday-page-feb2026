@@ -278,42 +278,44 @@ body.main-page {
 .d3 {
     top: 280%;
     left: 10%;
-    transform: rotate(-20deg);
+    transform: rotate(-20deg) translateY(100%);
 }
 
 .d4{
     top:220%;
     right: 13%;
-    transform: rotate(-5deg);
+    transform: rotate(-5deg) translateY(100%);
 }
 
 .d5{
     top: 115%;
     left: 10%;
+    transform: translateY(100%);
+
 }
 
 .d6{
     top: 328%;
     right: 10%;
-    transform: rotate(20deg);
+    transform: rotate(20deg) translateY(100%) ;
 }
 
 .d7{
     top: 380%;
     left: 15%;
-    transform: rotate(-20deg);
+    transform: rotate(-20deg) translateY(150%);
 }
   
 .d8{
     top: 70%;
     right: 20%;
-    transform: rotate(10deg);
+    transform: rotate(10deg) translateY(100%);
 }
 
 .d9{
     top: 380%;
     left: 16%;
-    transform: rotate(-10deg);
+    transform: rotate(-10deg) translateY(50%);
 }
 
 .bday-section {
