@@ -143,6 +143,7 @@ body {
     left: 5%;
     top: 105%;
     transform: rotate(-30deg);
+    z-index: 0;
 }
 .photo{
     width: 20%;
