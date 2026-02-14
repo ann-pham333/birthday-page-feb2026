@@ -57,6 +57,7 @@ main{
 /* SECOND COLLAGE */
 .collage.square {
     width: 80%;
+    margin-top: 10%;
     transform: rotate(3deg);
     filter: drop-shadow(0 8px 16px rgba(103, 64, 78, 0.2));
     padding: 25px 20px;
