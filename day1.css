@@ -141,7 +141,7 @@ body {
     width: 20%;
     position: absolute;
     left: 5%;
-    top: 105%;
+    top: 103%;
     transform: rotate(-30deg);
     z-index: 0;
 }
