@@ -261,6 +261,7 @@ body.main-page {
     opacity: 0.85;
     pointer-events: none;
     z-index: 1;
+    /* transform: translateY(-500px); */
 }
 
 .d1 {
