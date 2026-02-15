@@ -57,7 +57,7 @@ body {
     background: #f9f6ee;
     background-image: linear-gradient(#ede5d2 1px, transparent 1px);
     background-size: 100% 40px;
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 .stack {
