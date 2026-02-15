@@ -313,7 +313,7 @@ p span {
 }
 
 .card:nth-child(1){
-    padding: 12% 5%;
+    padding: 10% 5%;
 }
 
 .card-title{
@@ -327,14 +327,14 @@ p span {
     font-size: 25px;
     color: #d594a7;
     text-align: center;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 .card-p{
     font-size: 20px;
     color: #431926;
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 7px;
 }
 
 .card-p a{
